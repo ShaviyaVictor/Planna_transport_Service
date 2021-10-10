@@ -22,12 +22,13 @@ body {
 #banner .search-area input {
     height: 43px;
 }
-
+#banner .btn-search:hover{
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
 .result-card {
-    /* box-shadow: #ccc 0 0 16px; */
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
     background: transparent;
     border-radius: 15px;
+    margin-bottom: 25px;
 }
 
 .result-card .bus-reg{
@@ -41,8 +42,12 @@ body {
 }
 .result-card .btn-bookseats:hover{
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-    
+
 }
+.empty-results h3{
+    font-size: 18px;
+}
+
 @media screen and (max-width: 768px) {
     .trip-details>div:not(:last-child){
         display: flex;

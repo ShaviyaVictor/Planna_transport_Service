@@ -88,18 +88,18 @@
                     <form method="GET" class="row align-items-center">
                         <div class="col-md-5 col-lg-3 form-group mt-md-0 mt-3">
                             <label for="">From</label>
-                            <input type="text" name="from" class="form-control">
+                            <input type="text" name="from" class="form-control from" required>
                         </div>
                         <div class="col-md-5 col-lg-3 form-group mt-md-0 mt-3">
                             <label for="">To</label>
-                            <input type="text" name="to" class="form-control">
+                            <input type="text" name="to" class="form-control to" required>
                         </div>
                         <div class="col-md-5 col-lg-3 form-group mt-md-0 mt-3">
                             <label for="">Date</label>
-                            <input type="date" name="date" class="form-control">
+                            <input type="date" name="date" class="form-control date" required>
                         </div>
                         <div class="col-md-5 col-lg-3 text-center mt-md-0 mt-5">
-                            <button class="btn btn-primary" type="submit">
+                            <button class="btn btn-primary btn-search" type="submit">
                                 Search
                             </button>
                         </div>
@@ -112,40 +112,17 @@
     <section id="results" class="pt-5">
         <div class="container">
             <p>
-                Scheduled departure results...
+                Trip results ...
             </p>
 
-            <div class="result-card card shadow px-4 py-4">
-                <div class="row">
-                    <div class="col-md-2 text-md-left text-center">
-                        <img src="./images/bus.png" alt="" class="img-fluid">
-                    </div>
-                    <div class="col-md-10">
-                        <h6 class="bus-reg text-md-start text-center mt-md-0 mt-4">KCA 234J</h6>
-                        <div class="row align-items-center mt-md-0 mt-4 trip-details">
-                            <div class="col-md-3">
-                                <p><b>Route</b></p>
-                                <p>CBD - Juja</p>
-                            </div>
-                            <div class="col-md-2">
-                                <p><b>Pickup Time</b></p>
-                                <p>16:00</p>
-                            </div>
-                            <div class="col-md-3">
-                                <p><b>Availability</b></p>
-                                <p>2 Seats</p>
-                            </div>
-                            <div class="col-md-2">
-                                <p><b>Fare</b></p>
-                                <p>Ksh. 2,000</p>
-                            </div>
-                            <div class="col-md-2  text-center text-md-start">
-                                <button class="btn btn-bookseats">
-                                    Book Seats
-                                </button>
-                            </div>
-                        </div>
-                    </div>
+            <div class="result-cards">
+                
+            </div>
+            <div class="empty-results text-center my-3">
+                <div class="">
+                    <img src="./images/no_bus.png" alt="no-bus" class="img-fluid">
+                    <h3>Sorry, we can not find any  buses available for the route you have requested.</h3>
+                    <h3>Please try another combination.</h3>
                 </div>
             </div>
         </div>
@@ -219,13 +196,15 @@
     </footer>
 
     <!-- end footer -->
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
 
     <!-- add your js here -->
-
+    <script src="./js/home.js"></script>
     <!-- add your js here -->
 </body>
 
