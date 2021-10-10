@@ -1,3 +1,4 @@
-#banner{
-    height: 75%;
+#banner {
+    height: 78%;
+    background: linear-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 50%, rgba(0,0,0, 0.8) 100%), url("../images/banner.jpg") center center / cover no-repeat;
 }
