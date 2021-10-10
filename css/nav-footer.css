@@ -95,7 +95,7 @@ header>nav {
     display: flex;
     margin-top: 50px;
     background-color: #286DED;
-    padding: 5px;
+    padding: 20px 5px 5px;
     flex-wrap: wrap;
     color: #fefefe;
 }
