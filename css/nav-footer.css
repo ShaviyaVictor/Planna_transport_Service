@@ -1,0 +1,120 @@
+header .header {
+    display: flex;
+    padding: 1px 20px 1px 15px;
+    background-color: #0F2050;
+    color: #ccc;
+}
+
+header .header .contact {
+    font-size: 13px;
+}
+
+header>nav {
+    display: flex;
+    background-color: #286DED;
+    padding: 5px 30px 0px;
+    align-items: center;
+}
+
+header .logo>h1 {
+    align-items: center;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 28px;
+    margin: 0 0 8px;
+}
+
+header .logo .letter {
+    width: 50px;
+    height: 50px;
+    background: #FA9F3E;
+    color: #fff;
+    border-radius: 20px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 5px;
+}
+
+.social-icons {
+    margin-left: auto;
+}
+
+.social-icons a {
+    color: #fff;
+    padding: 0 15px;
+    text-decoration: none;
+}
+
+.nav-bar{
+    display: flex;
+}
+
+.nav-bar>li{
+    list-style: none;
+    padding: 0 20px;
+}
+
+.nav-bar>li>a{
+    text-decoration: none;
+    color: #fefefe;
+}
+
+.nav-bar>li>a:hover{
+    color: #fff;
+}
+
+.btn {
+    padding: 8px 20px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s linear;
+    outline: none;
+}
+
+.btn-auth{
+    border-radius: 50px;
+    background-color: #FA9F3E;
+    color: #fff;
+}
+
+@media screen and (max-width: 992px) {
+    .nav-bar>li:not(:last-child){
+        display: none;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .social-icons a {
+        padding: 0px 5px;
+    }
+    header .header .contact {
+        font-size: 10px;
+    }
+    header .header {
+        padding: 2px 10px;
+    }
+    header>nav {
+        padding: 5px 10px 0px;
+    }
+    .btn-auth{
+        padding: 8px 10px;
+    }
+    .nav-bar>li{
+        list-style: none;
+        padding: 0 5px;
+    }
+}
+
+.text-white {
+    color: #fff;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.ml-auto {
+    margin-left: auto;
+}
