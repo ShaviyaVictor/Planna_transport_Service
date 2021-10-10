@@ -1,23 +1,53 @@
-body{
+body {
     background: #e5e5e5;
 }
+
 #banner {
     height: 78%;
     position: relative;
-    background: linear-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 50%, rgba(0,0,0, 0.8) 100%), url("../images/banner.jpg") center center / cover no-repeat;
+    background: linear-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0.8) 100%), url("../images/banner.jpg") center center / cover no-repeat;
 }
 
-#banner .search-area{
+#banner .search-area {
     position: absolute;
     bottom: 50px;
     width: 100%;
 }
 
-#banner .search-area label{
+#banner .search-area label {
     font-weight: 550;
     font-size: 14px;
 }
 
-#banner .search-area input{
+#banner .search-area input {
     height: 43px;
+}
+
+.result-card {
+    /* box-shadow: #ccc 0 0 16px; */
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+    background: transparent;
+    border-radius: 15px;
+}
+
+.result-card .bus-reg{
+    font-weight: 700;
+}
+
+.result-card .btn-bookseats{
+    background-color: #FA9F3E;
+    color: #fefefe;
+    margin-top: -5px;
+}
+.result-card .btn-bookseats:hover{
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    
+}
+@media screen and (max-width: 768px) {
+    .trip-details>div:not(:last-child){
+        display: flex;
+    }
+    .trip-details>div>p:last-child{
+        margin-left: auto;
+    }
 }
