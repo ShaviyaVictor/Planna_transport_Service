@@ -1,4 +1,23 @@
+body{
+    background: #e5e5e5;
+}
 #banner {
     height: 78%;
+    position: relative;
     background: linear-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 50%, rgba(0,0,0, 0.8) 100%), url("../images/banner.jpg") center center / cover no-repeat;
+}
+
+#banner .search-area{
+    position: absolute;
+    bottom: 50px;
+    width: 100%;
+}
+
+#banner .search-area label{
+    font-weight: 550;
+    font-size: 14px;
+}
+
+#banner .search-area input{
+    height: 43px;
 }
