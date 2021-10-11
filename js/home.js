@@ -278,7 +278,19 @@ $(function () {
 
   $("#passengerDetailsForm").on("submit", function (e) {
     e.preventDefault();
-    selectedTrip.sc.find("selected").status("unavailable");
+
+    const selectedSeats = selectedTrip.sc
+      .find("selected"),
+      selectedSeatsLabels = selectedSeats.seats.map((seat) => seat.settings.label);
+
+    alert(`You have booked seat(s) ${selectedSeatsLabels.join(", ")}`);
+
+    selectedSeats.seats.map((seat) => {
+        seat.click();
+    });
+    
+    selectedSeats.status("unavailable");
+
     $("#passengerDetailsModal").modal("hide");
   });
 });
