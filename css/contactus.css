@@ -1,0 +1,25 @@
+input{
+	width: 500px;
+	height: 20px;
+	border-color: solid black;
+	border-radius: 15px;
+	padding:20px;
+	
+	padding:20px;
+	
+}
+.contact{
+	display: flex;
+	
+}
+	
+
+.head{
+	padding-left: 200px;
+}
+form{
+	padding-left: 100px;
+}
+#contacts{
+	margin-top: 50px;
+}
