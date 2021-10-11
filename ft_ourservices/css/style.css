@@ -127,7 +127,31 @@ header>nav {
     margin-left: 2%;
     margin-right: 5%;
 }
-
+.container1{
+    display: flex;
+    justify-content: space-evenly;
+}
+.container2{
+    display: flex;
+    justify-content: space-evenly;
+}
+.vertical-center{
+    margin-left: 41%;
+    padding: 40px;
+    padding-bottom: 0px;
+}
+button{
+    width: 150px;
+    height: 40px;
+    font-size: 20px;
+    color: #fff;
+    background-color: #FA9F3E;
+    border-radius: 20px;
+    border: none;
+}
+button:hover{
+    background-color: #0F2050;
+}
 
 
 
