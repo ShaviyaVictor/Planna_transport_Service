@@ -1,4 +1,6 @@
 div.seatCharts-container {
+	position: relative;
+	margin-top: 30px;
 	/*min-width: 700px;*/
 }
 div.seatCharts-cell {
@@ -32,7 +34,7 @@ div.seatCharts-seat:focus {
 */
 
 div.seatCharts-space {
-	background-color: white;
+	background-color: transparent;
 }
 div.seatCharts-row {
 	height: 50px;
@@ -65,4 +67,114 @@ ul.seatCharts-legendList {
 li.seatCharts-legendItem {
 	margin-top: 10px;
 	line-height: 2;
+}
+
+div.seatCharts-cell {
+    color: #182C4E;
+    height: 35px;
+    width: 37px;
+    line-height: 25px;
+    padding-top: 5px;
+}
+
+.front-indicator {
+    width: 60px;
+    float: right;
+    margin-top: -26px;
+    margin-right: 5px;
+    background-color: transparent;
+    position: absolute;
+    right: 15px;
+}
+
+div.seatCharts-seat {
+    color: #FFFFFF;
+    cursor: pointer;
+}
+
+div.seatCharts-row {
+    height: 35px;
+}
+
+div.seatCharts-seat.available {
+    background-color: transparent;
+	border: solid 1px #6c757d;
+	color: #6c757d;
+}
+
+div.seatCharts-seat.available.first-class {
+    background-color: #2483F7;
+}
+
+div.seatCharts-seat.available.first-class.seater_35 {
+    width: 60px;
+}
+
+
+
+div.seatCharts-seat.focused {
+    background-color: #296DED;
+}
+
+div.seatCharts-seat.selected {
+    background-color: #162963;
+}
+
+div.seatCharts-seat.selected.seater_35,
+div.seatCharts-seat.focused.seater_35 {
+    width: 60px !important;
+}
+
+div.seatCharts-seat.unavailable {
+    background-color: #980303;
+}
+
+div.seatCharts-container {
+    border-right: 1px dotted #adadad;
+    min-width: 200px;
+    padding: 5px 20px 20px;
+    float: left;
+}
+
+div.seatCharts-legend {
+    padding-left: 0px;
+    position: absolute;
+    bottom: 2px;
+}
+
+ul.seatCharts-legendList {
+    padding-left: 0px;
+}
+
+span.seatCharts-legendDescription {
+    margin-left: 5px;
+    line-height: 24px;
+}
+
+li.seatCharts-legendItem>div.seatCharts-seat.seater_35 {
+    width: 37px !important;
+}
+
+.booking-details h2{
+	text-align: center;
+	margin-bottom: 30px;
+}
+
+#selected-seats {
+    max-height: 200px;
+    overflow-y: auto;
+    width: auto;
+	list-style: none;
+}
+
+.btn-sm {
+    padding: .25rem .5rem;
+    font-size: .875rem;
+    border-radius: .2rem;
+}
+
+@media screen and (max-width: 768px) {
+	div.seatCharts-container {
+		border-right: none;
+	}
 }

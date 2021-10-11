@@ -12,7 +12,7 @@ const routes = [
     to: "Kikuyu",
   },
   {
-    id: 1,
+    id: 3,
     name: "CBD - Ngong",
     from: "CBD",
     to: "Ngong",
@@ -20,21 +20,9 @@ const routes = [
 ];
 
 const buses = [
-  {
-    id: 1,
-    reg_no: "KCA 231K",
-    seats: 45,
-  },
-  {
-    id: 2,
-    reg_no: "KCC 231K",
-    seats: 45,
-  },
-  {
-    id: 3,
-    reg_no: "KCD 231K",
-    seats: 45,
-  },
+  new Bus(1, "KCA 231K"),
+  new Bus(2, "KCC 231K"),
+  new Bus(3, "KCD 231K"),
 ];
 
 const trips = [
@@ -79,7 +67,10 @@ $(function () {
     const route = trip.getRoute();
     const bus = trip.getBus();
 
-    $(".result-cards").append(`<div class="result-card card shadow px-4 py-4" data-trip="${trip.id}">
+    $(".result-cards")
+      .append(`<div class="result-card card shadow px-4 py-4" data-trip="${
+      trip.id
+    }">
         <div class="row">
             <div class="col-md-2 text-md-left text-center">
                 <img src="./images/bus.png" alt="" class="img-fluid">
@@ -113,9 +104,157 @@ $(function () {
                 </div>
             </div>
         </div>
+        <div class="row seats d-none">
+                <div class="col-md-7 d-flex justify-content-center">
+                    <div class="seats-chart">
+                    <div class="front-indicator">
+                        <img src="images/steering-wheel.png" class="img-thumbnail bg-transparent" alt="Driver" height="">
+                    </div>
+                    </div>
+                </div>
+                <div class="col-md-5 relative">
+                    <div class="booking-details">
+                        <h2>Booking Details
+                            <span class="number_plate badge badge-primary fs-12"></span></h2>
+                        <h5> Selected Seats <span id="counter">0</span>:</h5>
+                        <ul id="selected-seats">
+
+                        </ul>
+                        <p>Total: <b><span id="total">0</span> Kes</b></p>
+                        
+                    </div>
+                    <div class="text-center btn-proceed-div">
+                    <button class="my-3 btn btn-lg btn-block btn-primary btn-proceed" disabled>
+                        <svg aria-hidden="true" focusable="false"
+                        data-prefix="far" data-icon="arrow-alt-right" role="img" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 448 512" class="svg-inline--fa fa-arrow-alt-right fa-w-14">
+                        <path fill="currentColor"
+                            d="M176 80.048v73.798H48c-26.51 0-48 21.49-48 48v108.308c0 26.51 21.49 48 48 48h128v73.789c0 42.638 51.731 64.151 81.941 33.941l176-175.943c18.745-18.745 18.746-49.137 0-67.882l-176-175.952C227.792 15.958 176 37.325 176 80.048zM400 256L224 432V310.154H48V201.846h176V80l176 176z"
+                            class=""></path>
+                        </svg>
+                        Proceed
+                    </button>
+                    </div>
+                </div>
+            </div>
     </div>`);
   });
+
+  // toggle view seat charts
+  $("body").on("click", ".btn-bookseats", function () {
+    const resultcard = $($(this).parents(".result-card")[0]);
+    $(resultcard.find(".seats")[0]).toggleClass("d-none");
+  });
+
+  // generate charts
+  $(".seats-chart").each(function (_, el) {
+    let firstSeatLabel = 1,
+      cart = $($(el).parents(".seats").find("#selected-seats")[0]),
+      counter = $($(el).parents(".seats").find("#counter")[0]),
+      total = $($(el).parents(".seats").find("#total")[0]),
+      proceedBtn = $($(el).parents(".seats").find(".btn-proceed")[0]),
+      details = [];
+
+    const tripId = $($(el).parents(".result-card")[0]).data("trip");
+    let trip = trips.find((t) => t.id == tripId);
+
+    var sc = $(el).seatCharts({
+      map: trip.getBus().seats_chart,
+      seats: {
+        e: {
+          price: trip.fare,
+          classes: "economy-class", //your custom CSS class
+          category: "Economy Class",
+        },
+      },
+      naming: {
+        top: false,
+        getLabel: function (character, row, column) {
+          return firstSeatLabel++;
+        },
+      },
+      click: function () {
+        if (this.status() == "available") {
+          $(event.target).toggleClass("animated rubberBand");
+          //let's create a new <li> which we'll add to the cart items
+          $(
+            '<li class="pb-3 pt-2">' +
+              this.data().category +
+              " Seat # " +
+              this.settings.label +
+              ": <b>Ksh " +
+              this.data().price +
+              '</b> <a href="javascript:void(0);"' +
+              ' class="cancel-cart-item btn btn-danger btn-sm ms-2"><i class="fa fa-trash"></i> cancel</a></li>'
+          )
+            .attr("id", "cart-item-" + this.settings.id)
+            .data("seatId", this.settings.id)
+            .appendTo(cart);
+
+          /*
+           * Lets update the counter and total
+           *
+           * .find function will not find the current seat, because it will change its stauts only after return
+           * 'selected'. This is why we have to add 1 to the length and the current seat price to the total.
+           */
+          counter.text(sc.find("selected").length + 1);
+          total.text(recalculateTotal(sc) + this.data().price);
+          details.push({
+            ["seatNo"]: this.settings.label,
+            ["price"]: this.data().price,
+          });
+
+          if (details.length > 0) {
+            proceedBtn.prop("disabled", false);
+          } else {
+            proceedBtn.prop("disabled", true);
+          }
+
+          return "selected";
+        } else if (this.status() == "selected") {
+          $(event.target).toggleClass("animated rubberBand");
+          //update the counter
+          counter.text(sc.find("selected").length - 1);
+          //and total
+          total.text(recalculateTotal(sc) - this.data().price);
+
+          //remove the item from our cart
+          $($(el).parents(".result-card")[0])
+            .find("#cart-item-" + this.settings.id)
+            .remove();
+
+          no = this.settings.label;
+          var filtered = details.filter(function (item) {
+            return item.seatNo != no;
+          });
+          details = filtered;
+
+          if (details.length > 0) {
+            proceedBtn.prop("disabled", false);
+          } else {
+            proceedBtn.prop("disabled", true);
+          }
+
+          //seat has been vacated
+          return "available";
+        } else if (this.status() == "unavailable") {
+          //seat has been already booked
+          return "unavailable";
+        } else {
+          return this.style();
+        }
+      },
+    });
+
+    //this will handle "[cancel]" link clicks
+    $("body").on("click", ".cancel-cart-item", function () {
+      //let's just trigger Click event on the appropriate seat, so we don't have to repeat the logic here
+      sc.get($(this).parents("li:first").data("seatId")).click();
+    });
+  });
 });
+
+// Trip
 
 function Trip(
   id,
@@ -143,9 +282,29 @@ Trip.prototype.getRoute = function () {
   return routes.find((r) => r.id == this.route_id);
 };
 
-Trip.prototype.getAvailableSeats = function(){
-    const bus = this.getBus();
-    return bus.seats - this.booked_seats;
+Trip.prototype.getAvailableSeats = function () {
+  const bus = this.getBus();
+  return bus.seats - this.booked_seats;
+};
+
+// Bus
+
+function Bus(id, reg_no) {
+  this.reg_no = reg_no;
+  this.seats = 45;
+  this.id = id;
+  this.seats_chart = [
+    "ee____",
+    "eee_ee",
+    "___e_e",
+    "ee_eee",
+    "ee_eee",
+    "ee_eee",
+    "ee_eee",
+    "ee_eee",
+    "ee_eee",
+    "eeeeee",
+  ];
 }
 
 // get url parameters
@@ -175,3 +334,14 @@ function isSameDay(date1, date2) {
     date1.getMonth() === date2.getMonth()
   );
 }
+
+let recalculateTotal = (sc) => {
+  var total = 0;
+
+  //basically find every selected seat and sum its price
+  sc.find("selected").each(function () {
+    total += this.data().price;
+  });
+
+  return total;
+};

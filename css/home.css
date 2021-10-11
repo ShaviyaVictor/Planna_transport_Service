@@ -48,11 +48,32 @@ body {
     font-size: 18px;
 }
 
+.svg-inline--fa.fa-w-14 {
+    width: 0.875em;
+}
+
+.btn-proceed{
+    position: absolute;
+    bottom: 0;
+    right: 30px;
+}
+
+.relative{
+    position: relative;
+}
+
+.absolute{
+    position: absolute;
+}
+
 @media screen and (max-width: 768px) {
     .trip-details>div:not(:last-child){
         display: flex;
     }
     .trip-details>div>p:last-child{
         margin-left: auto;
+    }
+    .btn-proceed-div{
+        margin-top: 100px;
     }
 }
