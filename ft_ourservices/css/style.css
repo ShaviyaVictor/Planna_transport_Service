@@ -88,6 +88,45 @@ header>nav {
     background-color: #FA9F3E;
     color: #fff;
 }
+.main1{
+    background-color:#F3F6F9 ;
+}
+.submain {
+    background-color: #fff;
+    margin-left: 11%;
+    margin-right: 11%;
+}
+#pic1{
+    width: 750px;
+    border-bottom-left-radius: 178px;
+}
+.title{
+    display: flex;
+    justify-content: space-between;
+}
+#top{
+    margin-left: 40%;
+    width: 500px;
+    margin-top: 30%;
+    font-size: 30px;
+    font-weight: 400;
+}
+#mainhead{
+    margin-left: 7%;
+    width: 500px;
+    font-size: 70px;
+    font-weight: 500;
+}
+.subhead > h3{
+    margin-left: 3%;
+    font-size: 30px;
+    font-weight: 500;
+    margin-top: 57px;
+}
+.subhead > p{
+    margin-left: 2%;
+    margin-right: 5%;
+}
 
 
 
