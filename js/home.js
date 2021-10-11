@@ -19,16 +19,20 @@ const routes = [
   },
 ];
 
+const matatuMap = ["ee_", "eee", "eee", "eee", "eee"];
+
 const buses = [
   new Bus(1, "KCA 231K"),
   new Bus(2, "KCC 231K"),
   new Bus(3, "KCD 231K"),
+  new Bus(4, "KDA 123J", 14, matatuMap),
 ];
 
 const trips = [
   new Trip(1, 1, 2, 200, "16:00"),
-  new Trip(2, 2, 1, 100, "15:00"),
-  new Trip(3, 3, 2, 300, "14:00"),
+  new Trip(2, 2, 1, 100, "15:00", undefined, [5]),
+  new Trip(3, 3, 2, 300, "14:00", undefined, [1, 2]),
+  new Trip(4, 4, 1, 150, "14:00", undefined, [5]),
 ];
 
 // when page is loaded
@@ -68,7 +72,7 @@ $(function () {
     const bus = trip.getBus();
 
     $(".result-cards")
-      .append(`<div class="result-card card shadow px-4 py-4" data-trip="${
+      .append(`<div class="result-card card shadow px-md-4 px-3 py-4" data-trip="${
       trip.id
     }">
         <div class="row">
@@ -105,14 +109,14 @@ $(function () {
             </div>
         </div>
         <div class="row seats d-none">
-                <div class="col-md-7 d-flex justify-content-center">
+                <div class="col-md-7 d-flex justify-content-center px-md-3 px-0">
                     <div class="seats-chart">
                     <div class="front-indicator">
                         <img src="images/steering-wheel.png" class="img-thumbnail bg-transparent" alt="Driver" height="">
                     </div>
                     </div>
                 </div>
-                <div class="col-md-5 relative">
+                <div class="col-md-5 relative mt-4 mt-md-0">
                     <div class="booking-details">
                         <h2>Booking Details
                             <span class="number_plate badge badge-primary fs-12"></span></h2>
@@ -124,7 +128,9 @@ $(function () {
                         
                     </div>
                     <div class="text-center btn-proceed-div">
-                    <button class="my-3 btn btn-lg btn-block btn-primary btn-proceed" disabled>
+                    <button class="my-3 btn btn-lg btn-block btn-primary btn-proceed" disabled data-bs-toggle="modal" data-bs-target="#passengerDetailsModal" data-trip="${
+                      trip.id
+                    }">
                         <svg aria-hidden="true" focusable="false"
                         data-prefix="far" data-icon="arrow-alt-right" role="img" xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 448 512" class="svg-inline--fa fa-arrow-alt-right fa-w-14">
@@ -189,6 +195,7 @@ $(function () {
           )
             .attr("id", "cart-item-" + this.settings.id)
             .data("seatId", this.settings.id)
+            .data("trip", trip.id)
             .appendTo(cart);
 
           /*
@@ -246,11 +253,33 @@ $(function () {
       },
     });
 
-    //this will handle "[cancel]" link clicks
-    $("body").on("click", ".cancel-cart-item", function () {
-      //let's just trigger Click event on the appropriate seat, so we don't have to repeat the logic here
-      sc.get($(this).parents("li:first").data("seatId")).click();
+    trip.sc = sc;
+
+    trip.booked_seats.forEach((seatIndex) => {
+      sc.get([sc.seatIds[seatIndex]]).status("unavailable");
     });
+  });
+
+  var selectedTrip;
+  $("#passengerDetailsModal").on("show.bs.modal", function (event) {
+    const proceedBtn = $(event.relatedTarget);
+    selectedTrip = trips.find((t) => t.id == proceedBtn.data("trip"));
+  });
+
+  //this will handle "[cancel]" link clicks
+  $("body").on("click", ".cancel-cart-item", function () {
+    selectedTrip = trips.find(
+      (t) => t.id == $(this).parents("li:first").data("trip")
+    );
+    //let's just trigger Click event on the appropriate seat, so we don't have to repeat the logic here
+
+    selectedTrip.sc.get($(this).parents("li:first").data("seatId")).click();
+  });
+
+  $("#passengerDetailsForm").on("submit", function (e) {
+    e.preventDefault();
+    selectedTrip.sc.find("selected").status("unavailable");
+    $("#passengerDetailsModal").modal("hide");
   });
 });
 
@@ -263,6 +292,7 @@ function Trip(
   fare,
   pickup_time,
   travel_date = new Date(),
+  booked_seats = [],
   currency = "Ksh"
 ) {
   this.id = id;
@@ -271,7 +301,8 @@ function Trip(
   this.pickup_time = pickup_time;
   this.travel_date = travel_date;
   this.currency = currency;
-  this.booked_seats = 0;
+  this.booked_seats = booked_seats;
+  this.sc = null;
 }
 
 Trip.prototype.getBus = function () {
@@ -284,14 +315,14 @@ Trip.prototype.getRoute = function () {
 
 Trip.prototype.getAvailableSeats = function () {
   const bus = this.getBus();
-  return bus.seats - this.booked_seats;
+  return bus.seats - this.booked_seats.length;
 };
 
 // Bus
 
-function Bus(id, reg_no) {
+function Bus(id, reg_no, seats = 45, seats_chart = null) {
   this.reg_no = reg_no;
-  this.seats = 45;
+  this.seats = seats;
   this.id = id;
   this.seats_chart = [
     "ee____",
@@ -305,6 +336,10 @@ function Bus(id, reg_no) {
     "ee_eee",
     "eeeeee",
   ];
+
+  if (seats_chart) {
+    this.seats_chart = seats_chart;
+  }
 }
 
 // get url parameters
