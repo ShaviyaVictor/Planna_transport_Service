@@ -11,3 +11,23 @@
 .about-text{
     text-align: center;
 }
+.text-below-img ul 
+{
+    display: flex;
+    list-style: none;
+    color: black;
+    justify-content: space-around;
+
+}
+.text-below-img ul li 
+{
+    margin: 15px;
+    padding: 15px;
+    list-style: none;
+    display: inline;
+    padding: 25px;
+    font-size: 17px;
+    position: relative;
+    z-index: 3;
+    
+}
