@@ -9,6 +9,9 @@
 }
 .heading{
     text-align: center;
+    box-sizing: border-box;
+    
+    
 }
 .word{
     color: royalblue;
@@ -40,4 +43,16 @@
 }
 .text-below-img ul li:hover{
     color: #286ded;
+}
+.text-below-img .description>div:not(:first-child){
+    display: none;
+}
+.description{
+    padding-top: -40px;
+    padding-left: 40px;
+}
+.heading{background-color: seashell;
+}
+.word2{
+    color: black;
 }
