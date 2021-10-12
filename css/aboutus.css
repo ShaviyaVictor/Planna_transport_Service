@@ -1,0 +1,10 @@
+.Image{
+    background-image: url("../image/happy-black-couple-travelling-by-bus-chicago_108072-2050.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 550px;
+    padding-top: 50px;
+}
+.heading{
+    text-align: center;
+}
