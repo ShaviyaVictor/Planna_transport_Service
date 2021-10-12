@@ -69,10 +69,12 @@ header>nav {
 .nav-bar>li>a{
     text-decoration: none;
     color: #fefefe;
+    padding-bottom: 5px;
 }
 
 .nav-bar>li>a:hover{
     color: #fff;
+    border-bottom: 3px solid #FA9F3E;
 }
 
 .btn {

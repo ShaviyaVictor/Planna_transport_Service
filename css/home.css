@@ -1,13 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Merienda+One&display=swap');
 body {
     background: #e5e5e5;
+    overflow-x: hidden;
 }
 
 #banner {
     height: 85%;
     position: relative;
-    background: linear-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0.8) 100%), url("../images/banner.jpg") center center / cover no-repeat;
+    background: linear-gradient(rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 30%, rgba(0, 0, 0, 0.8) 100%), url("../images/banner.jpg") center center / cover no-repeat;
+}
+#banner .travel-with-us:not(.text-dark){
+    font-size: 50px;
+    color: #fefefe;
+    font-weight: 700;
+    padding-top: 70px;
+    font-family: 'Merienda One',serif;
 }
 
+#banner .travel-with-us.text-dark{
+    font-weight: 40px;
+    font-weight: 700;
+}
 #banner .search-area {
     position: absolute;
     bottom: 50px;
