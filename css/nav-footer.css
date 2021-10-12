@@ -103,6 +103,16 @@ header>nav {
 .footer>div{
     flex: 1 0 33%;
 }
+footer .follow-us{
+    margin-right: -50px;
+}
+footer  .header .social-icons a{
+    font-size: 14px;
+}
+footer .header .social-icons a:hover{
+    color: #286DED !important;
+    text-decoration: underline !important;
+}
 
 @media screen and (max-width: 992px) {
     .nav-bar>li:not(:last-child){
@@ -144,6 +154,9 @@ header>nav {
 
     .btn-auth{
         font-size: 12px;
+    }
+    footer .follow-us{
+        margin-right: 0px;
     }
 }
 
