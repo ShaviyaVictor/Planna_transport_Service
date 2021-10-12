@@ -1,15 +1,21 @@
 .Image{
-    background-image: url("../image/happy-black-couple-travelling-by-bus-chicago_108072-2050.jpg");
+    background:rgba(0,0,0,0.5) url("../image/happy-black-couple-travelling-by-bus-chicago_108072-2050.jpg");
     background-repeat: no-repeat;
     background-size: cover;
+    background-blend-mode:darken;
     height: 550px;
     padding-top: 50px;
+    color: #fefefe;
 }
 .heading{
     text-align: center;
 }
+.word{
+    color: royalblue;
+}
 .about-text{
     text-align: center;
+    font-size: 24px;
 }
 .text-below-img ul 
 {
@@ -29,5 +35,9 @@
     font-size: 17px;
     position: relative;
     z-index: 3;
+    cursor: pointer;
     
+}
+.text-below-img ul li:hover{
+    color: #286ded;
 }
