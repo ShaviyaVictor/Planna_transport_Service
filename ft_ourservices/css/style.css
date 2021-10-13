@@ -118,38 +118,51 @@ header>nav {
     margin-top: 70px;
     text-align: center;
 }
+.summary{
+    display: flex;
+    justify-content: space-evenly;
+}
 #time > h3{
     margin-left: 3%;
     font-size: 45px;
     font-weight: 600;
     margin-top: 57px;
+    text-decoration: underline;
 }
 #time > p{
     margin-left: 3%;
     margin-right: 5%;
-    padding-top: 1px;
+    margin-top: -5px;
+    width: 200px;
+    font-weight: 500;
 }
 #money > h3{
     margin-left: 3%;
     font-size: 45px;
     font-weight: 600;
     margin-top: 57px;
+    text-decoration: underline;
 }
 #money > p{
     margin-left: 3%;
     margin-right: 5%;
     padding-top: 1px;
+    width: 200px;
+    font-weight: 500;
 }
 #convenience > h3{
     margin-left: 3%;
     font-size: 45px;
     font-weight: 600;
     margin-top: 57px;
+    text-decoration: underline;
 }
 #convenience > p{
     margin-left: 3%;
     margin-right: 5%;
     padding-top: 1px;
+    width: 200px;
+    font-weight: 500;
 }
 .subhead > h3{
     margin-left: 3%;
