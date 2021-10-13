@@ -8,6 +8,7 @@ body {
     height: 75%;
     position: relative;
     background: linear-gradient(rgba(0, 0, 0, 0.0) 0%, rgba(0, 0, 0, 0.6) 50%, rgba(0, 0, 0, 0.8) 100%), url("../images/banner.jpg") center center / cover no-repeat;
+    margin-bottom: 10%;
 }
 #banner .travel-with-us:not(.text-dark){
     font-size: 50px;
@@ -26,7 +27,7 @@ body {
 }
 #banner .search-area {
     position: absolute;
-    bottom: -20%;
+    bottom: -10%;
     width: 100%;
 }
 #banner .search-area .card{
@@ -95,6 +96,12 @@ body {
     position: absolute;
 }
 
+@media screen and (max-width: 992px) {
+    #banner{
+        margin-bottom: 20%;
+    }
+}
+
 @media screen and (max-width: 768px) {
     .trip-details>div:not(:last-child){
         display: flex;
@@ -107,14 +114,14 @@ body {
     }
 }
 
-@media screen and (max-width: 768px) and (min-width: 561px) {
+/* @media screen and (max-width: 768px) and (min-width: 561px) {
     .search-area .container{
         padding-left: 0px;
         padding-right: 0px;
     }
-}
+} */
 
-@media screen and (max-width: 561px) {
+@media screen and (max-width: 581px) {
     #banner .search-area{
         bottom: -50%;
     }
@@ -125,11 +132,13 @@ body {
     #banner .travel-with-us+p{
         font-size: 17px;
     }
+    #banner{
+        margin-bottom: 90%;
+    }
 }
 
 @media screen and (max-width: 370px) {
     #banner h1.travel-with-us{
-        /* margin-top: -50px; */
         font-size: 35px !important;
     }
     #banner .travel-with-us+p{
