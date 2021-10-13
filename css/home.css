@@ -88,6 +88,21 @@ body {
     font-size: 20px;
 }
 
+/* we got you section */
+#we-got-you .card{
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    border-radius: 10px;
+    transition: all 0.3s linear;
+}
+#we-got-you .card img{
+    height: 100px;
+    width: 100px;
+    padding: 4px 0;
+}
+#we-got-you .card:hover{
+    box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+
 #results {
     margin-top: 50px;
 }
@@ -171,6 +186,16 @@ body {
     }
     #banner {
         margin-bottom: 80%;
+    }
+    #we-got-you .card-title{
+        margin-top: 15px;
+    }
+    #we-got-you .card-desc{
+        padding-top: 15px;
+        font-size: 20px;
+        width: 70%;
+        margin-left: auto;
+        margin-right: auto;
     }
 }
 
