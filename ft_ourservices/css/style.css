@@ -140,7 +140,17 @@ header>nav {
     margin-right: 5%;
     padding-top: 1px;
 }
-
+#convenience > h3{
+    margin-left: 3%;
+    font-size: 45px;
+    font-weight: 600;
+    margin-top: 57px;
+}
+#convenience > p{
+    margin-left: 3%;
+    margin-right: 5%;
+    padding-top: 1px;
+}
 .subhead > h3{
     margin-left: 3%;
     font-size: 45px;
