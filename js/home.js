@@ -37,10 +37,11 @@ const trips = [
 
 // when page is loaded
 $(function () {
-  $("input.date").prop("min", function () {
-    return new Date().toJSON().split("T")[0];
-  })
-  .val(new Date().toJSON().split("T")[0]);  
+  $("input.date")
+    .prop("min", function () {
+      return new Date().toJSON().split("T")[0];
+    })
+    .val(new Date().toJSON().split("T")[0]);
 
   const from = getUrlParameter("from");
   const to = getUrlParameter("to");
@@ -50,6 +51,7 @@ $(function () {
     $("input.from").val(from);
     $("input.to").val(to);
     $("input.date").val(date);
+    $("span.result-date").text(new Date(date).toDateString());
   }
 
   const todayTrips = trips.filter((trip) => {
@@ -57,7 +59,8 @@ $(function () {
     if (from && to && date) {
       return (
         route.from.toLowerCase() == from.toLowerCase() &&
-        route.to.toLowerCase() == to.toLowerCase()
+        route.to.toLowerCase() == to.toLowerCase() &&
+        isSameDay(trip.travel_date, new Date(date))
       );
     } else {
       return isSameDay(trip.travel_date, new Date());
@@ -95,7 +98,9 @@ $(function () {
                     </div>
                     <div class="col-md-3">
                         <p><b>Availability</b></p>
-                        <p>${trip.getAvailableSeats()} Seats</p>
+                        <p class="available-seats-${
+                          trip.id
+                        }">${trip.getAvailableSeats()} Seats</p>
                     </div>
                     <div class="col-md-2">
                         <p><b>Fare</b></p>
@@ -280,17 +285,25 @@ $(function () {
   $("#passengerDetailsForm").on("submit", function (e) {
     e.preventDefault();
 
-    const selectedSeats = selectedTrip.sc
-      .find("selected"),
-      selectedSeatsLabels = selectedSeats.seats.map((seat) => seat.settings.label);
+    const selectedSeats = selectedTrip.sc.find("selected"),
+      selectedSeatsLabels = selectedSeats.seats.map(
+        (seat) => seat.settings.label
+      );
 
     alert(`You have booked seat(s) ${selectedSeatsLabels.join(", ")}`);
 
     selectedSeats.seats.map((seat) => {
-        seat.click();
+      seat.click();
     });
-    
+
     selectedSeats.status("unavailable");
+
+    $(`p.available-seats-${selectedTrip.id}`).text(
+      `${
+        selectedTrip.sc.seatIds.length -
+        selectedTrip.sc.find("unavailable").length
+      } seats`
+    );
 
     $("#passengerDetailsModal").modal("hide");
   });
