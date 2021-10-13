@@ -169,6 +169,13 @@ header>nav {
     width: 200px;
     font-weight: 500;
 }
+.pics{
+    display: flex;
+    justify-content: space-evenly;
+    width: 900px;
+    margin-left: 10%;
+    margin-top: 5%;
+}
 .subhead > h3{
     margin-left: 3%;
     font-size: 45px;
@@ -192,7 +199,7 @@ header>nav {
     padding: 40px;
     padding-bottom: 0px;
 }
-button{
+#click{
     width: 150px;
     height: 40px;
     font-size: 20px;
@@ -200,8 +207,10 @@ button{
     background-color: #FA9F3E;
     border-radius: 20px;
     border: none;
+    cursor: pointer;
+
 }
-button:hover{
+button > #click :hover{
     background-color: #0F2050;
 }
 
