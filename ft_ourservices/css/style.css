@@ -177,22 +177,31 @@ header>nav {
     margin-top: 5%;
 }
 .subhead > h3{
-    margin-left: 3%;
+    margin-left: 5%;
     font-size: 45px;
     font-weight: 600;
     margin-top: 57px;
 }
 .subhead > p{
-    margin-left: 2%;
+    margin-left: 5%;
     margin-right: 5%;
+    font-weight: 500;
 }
 .container1{
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
+    margin-left: 10%;
+    margin-right: 20%;
+}
+.steps{
+    width: 300px;
+    
 }
 .container2{
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
+    margin-left: 10%;
+    margin-right: 20%;
 }
 .vertical-center{
     margin-left: 41%;
@@ -210,8 +219,10 @@ header>nav {
     cursor: pointer;
 
 }
-button > #click :hover{
+#click:hover{
     background-color: #0F2050;
+    transform:translateY(+10px);
+    transition: 0.2s ease-in-out;
 }
 
 
