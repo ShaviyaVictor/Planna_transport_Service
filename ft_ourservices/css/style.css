@@ -120,7 +120,12 @@ header>nav {
 }
 .summary{
     display: flex;
+    background-color: rgba(0,0,255, 0.4)	;
     justify-content: space-evenly;
+    border-radius: 50px;
+    width: 950px;
+    margin-left: 11%;
+    padding-bottom: 30px;
 }
 #time > h3{
     margin-left: 3%;
