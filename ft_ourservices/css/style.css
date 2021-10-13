@@ -118,11 +118,22 @@ header>nav {
     margin-top: 70px;
     text-align: center;
 }
+#time > h3{
+    margin-left: 3%;
+    font-size: 45px;
+    font-weight: 600;
+    margin-top: 57px;
+}
+#time > p{
+    margin-left: 2%;
+    margin-right: 5%;
+    padding-top: 1px;
+}
 
 .subhead > h3{
     margin-left: 3%;
-    font-size: 30px;
-    font-weight: 500;
+    font-size: 45px;
+    font-weight: 600;
     margin-top: 57px;
 }
 .subhead > p{
