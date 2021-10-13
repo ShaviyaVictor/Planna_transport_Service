@@ -125,7 +125,18 @@ header>nav {
     margin-top: 57px;
 }
 #time > p{
-    margin-left: 2%;
+    margin-left: 3%;
+    margin-right: 5%;
+    padding-top: 1px;
+}
+#money > h3{
+    margin-left: 3%;
+    font-size: 45px;
+    font-weight: 600;
+    margin-top: 57px;
+}
+#money > p{
+    margin-left: 3%;
     margin-right: 5%;
     padding-top: 1px;
 }
