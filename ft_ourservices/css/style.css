@@ -88,6 +88,8 @@ header>nav {
     background-color: #FA9F3E;
     color: #fff;
 }
+
+
 .main1{
     background-color:#F3F6F9 ;
 }
@@ -117,6 +119,9 @@ header>nav {
     font-weight: 700;
     margin-top: 70px;
     text-align: center;
+}
+.subhead{
+    margin-bottom: 25px;
 }
 .summary{
     display: flex;
@@ -224,8 +229,15 @@ header>nav {
     transform:translateY(+10px);
     transition: 0.2s ease-in-out;
 }
-
-
+.subhead > h2#conclusion{
+    text-align: left;
+    margin-left: 4.5%;
+    margin-bottom: 1%;
+}
+.subhead > h2#conclusion+p{
+    text-align: left;
+    margin-bottom: 3%;
+}
 
 
 
