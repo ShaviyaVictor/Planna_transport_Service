@@ -111,6 +111,14 @@ header>nav {
     font-weight: 500;
     margin-top: 200px;
 }
+.subhead > h2{
+    margin-left: 3% 3%;
+    font-size: 70px;
+    font-weight: 700;
+    margin-top: 70px;
+    text-align: center;
+}
+
 .subhead > h3{
     margin-left: 3%;
     font-size: 30px;
