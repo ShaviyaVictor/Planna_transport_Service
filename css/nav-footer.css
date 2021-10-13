@@ -47,6 +47,11 @@ header>nav {
     margin-right: 5px;
 }
 
+.logo .logo-link{
+    text-decoration: none;
+    color: #fff;
+}
+
 .social-icons {
     margin-left: auto;
 }
