@@ -1,0 +1,215 @@
+@import url('https://fonts.googleapis.com/css2?family=Merienda+One&display=swap');
+body {
+    background: #e5e5e5;
+    overflow-x: hidden;
+}
+
+#banner {
+    height: 75%;
+    position: relative;
+    background: linear-gradient(rgba(0, 0, 0, 0.0) 0%, rgba(0, 0, 0, 0.6) 50%, rgba(0, 0, 0, 0.8) 100%), url("../images/banner.jpg") center center / cover no-repeat;
+    margin-bottom: 10%;
+}
+
+#banner .travel-with-us:not(.text-dark) {
+    font-size: 50px;
+    color: #fff;
+    font-weight: 700;
+    /* padding-top: 70px; */
+    font-family: 'Merienda One', serif;
+}
+
+#banner .travel-with-us+p {
+    color: #fff;
+    font-size: 19px;
+}
+
+#banner .travel-with-us.text-dark {
+    font-weight: 40px;
+    font-weight: 700;
+}
+
+#banner .search-area {
+    position: absolute;
+    bottom: -10%;
+    width: 100%;
+}
+
+#banner .search-area .card {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+
+#banner .search-area label {
+    font-weight: 550;
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.54);
+}
+
+#banner .search-area input {
+    height: 43px;
+    color: rgba(0, 0, 0, 0.7);
+    ;
+}
+
+#banner .btn-search {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+#banner .btn-search:hover {
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+/* why choose us section */
+
+.section-title h1 {
+    font-size: 45px;
+    font-weight: 700;
+    text-transform: capitalize;
+}
+
+.section-title h1>span {
+    position: relative;
+    padding-bottom: 20px;
+}
+
+.section-title h1>span::after {
+    content: '';
+    position: absolute;
+    width: 150px;
+    height: 15px;
+    background-color: #286DED;
+    bottom: 0;
+    right: calc(50% - 75px);
+}
+
+.section-desc p{
+    line-height: 33px;
+    font-size: 20px;
+}
+
+/* we got you section */
+#we-got-you .card{
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    border-radius: 10px;
+    transition: all 0.3s linear;
+}
+#we-got-you .card img{
+    height: 100px;
+    width: 100px;
+    padding: 4px 0;
+}
+#we-got-you .card:hover{
+    box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+
+#results {
+    margin-top: 50px;
+}
+
+.result-card {
+    background: transparent;
+    border-radius: 15px;
+    margin-bottom: 25px;
+}
+
+.result-card .bus-reg {
+    font-weight: 700;
+}
+
+.result-card .btn-bookseats {
+    background-color: #FA9F3E;
+    color: #fefefe;
+    margin-top: -5px;
+}
+
+.result-card .btn-bookseats:hover {
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.empty-results h3 {
+    font-size: 18px;
+}
+
+.svg-inline--fa.fa-w-14 {
+    width: 0.875em;
+}
+
+.btn-proceed {
+    position: absolute;
+    bottom: 0;
+    right: 30px;
+}
+
+.relative {
+    position: relative;
+}
+
+.absolute {
+    position: absolute;
+}
+
+@media screen and (max-width: 992px) {
+    #banner {
+        margin-bottom: 20%;
+    }
+    .section-title h1 {
+        font-size: 40px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .trip-details>div:not(:last-child) {
+        display: flex;
+    }
+    .trip-details>div>p:last-child {
+        margin-left: auto;
+    }
+    .btn-proceed-div {
+        margin-top: 100px;
+    }
+    .section-title h1{
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 581px) {
+    #banner .search-area {
+        bottom: -50%;
+    }
+    #banner .travel-with-us {
+        margin-top: -50px;
+        font-size: 40px;
+    }
+    #banner .travel-with-us+p {
+        font-size: 17px;
+    }
+    #banner {
+        margin-bottom: 80%;
+    }
+    #we-got-you .card-title{
+        margin-top: 15px;
+    }
+    #we-got-you .card-desc{
+        padding-top: 15px;
+        font-size: 20px;
+        width: 70%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    #why-choose-us{
+        padding-top: 20px;
+    }
+}
+
+@media screen and (max-width: 370px) {
+    #banner h1.travel-with-us {
+        font-size: 35px !important;
+    }
+    #banner .travel-with-us+p {
+        display: none;
+    }
+}

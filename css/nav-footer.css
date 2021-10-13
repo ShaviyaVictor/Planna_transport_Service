@@ -39,12 +39,17 @@ header>nav {
     height: 50px;
     background: #FA9F3E;
     color: #fff;
-    border-radius: 20px;
+    border-radius: 15px;
     text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
     margin-right: 5px;
+}
+
+.logo .logo-link{
+    text-decoration: none;
+    color: #fff;
 }
 
 .social-icons {
@@ -69,10 +74,12 @@ header>nav {
 .nav-bar>li>a{
     text-decoration: none;
     color: #fefefe;
+    padding-bottom: 5px;
 }
 
 .nav-bar>li>a:hover{
     color: #fff;
+    border-bottom: 3px solid #FA9F3E;
 }
 
 .btn {
@@ -102,6 +109,16 @@ header>nav {
 
 .footer>div{
     flex: 1 0 33%;
+}
+footer .follow-us{
+    margin-right: -50px;
+}
+footer  .header .social-icons a{
+    font-size: 14px;
+}
+footer .header .social-icons a:hover{
+    color: #286DED !important;
+    text-decoration: underline !important;
 }
 
 @media screen and (max-width: 992px) {
@@ -140,6 +157,13 @@ header>nav {
     }
     .footer .logo h1{
         justify-content: center;
+    }
+
+    .btn-auth{
+        font-size: 12px;
+    }
+    footer .follow-us{
+        margin-right: 0px;
     }
 }
 
