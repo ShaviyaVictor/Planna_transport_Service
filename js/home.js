@@ -39,7 +39,8 @@ const trips = [
 $(function () {
   $("input.date").prop("min", function () {
     return new Date().toJSON().split("T")[0];
-  });
+  })
+  .val(new Date().toJSON().split("T")[0]);  
 
   const from = getUrlParameter("from");
   const to = getUrlParameter("to");

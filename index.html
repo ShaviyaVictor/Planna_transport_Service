@@ -84,36 +84,39 @@
 
     <section id="banner" class="d-flex justify-content-center align-items-center">
         <div>
-            <h1 class="text-center travel-with-us d-none d-sm-block">
+            <h1 class="text-center travel-with-us d-nones d-sm-block">
                 Travel With Us
             </h1>
-            <p class="text-center d-none d-sm-block">
+            <p class="text-center d-nones d-sm-block">
                 Travel and Commute Between Cities With Ease.
             </p>
         </div>
         <div class="search-area absolute">
             <div class="container">
-                <div class="card shadow px-3 py-4">
-                    <h1 class="text-center travel-with-us d-block d-sm-none text-dark">
+                <div class="card px-3 py-4">
+                    <!-- <h1 class="text-center travel-with-us d-block d-sm-none text-dark">
                         Travel With Us
-                    </h1>
+                    </h1> -->
                     <form method="GET" class="row align-items-center">
-                        <div class="col-md-5 col-lg-3 form-group mt-md-0 mt-3">
+                        <div class="col-sm-6 col-md-5 col-lg-3 form-group mt-md-0 mt-3">
                             <label for="">From</label>
                             <input type="text" name="from" class="form-control from" required>
                         </div>
-                        <div class="col-md-5 col-lg-3 form-group mt-md-0 mt-3">
+                        <div class="col-sm-6 col-md-5 col-lg-3 form-group mt-md-0 mt-3">
                             <label for="">To</label>
                             <input type="text" name="to" class="form-control to" required>
                         </div>
-                        <div class="col-md-5 col-lg-3 form-group mt-md-0 mt-3">
+                        <div class="col-sm-6 col-md-5 col-lg-3 form-group mt-md-0 mt-3">
                             <label for="">Date</label>
                             <input type="date" name="date" class="form-control date" required>
                         </div>
-                        <div class="col-md-5 col-lg-3 text-center mt-md-0 mt-5">
-                            <button class="btn btn-primary btn-search" type="submit">
-                                Search
-                            </button>
+                        <div class="col-sm-6 col-md-5 col-lg-3 text-center mt-sm-0 mt-5">
+                            <div class="d-grid gap-1 mt-4">
+                                <button class="btn btn-primary btn-search" type="submit">
+                                    Search
+                                </button>
+                            </div>
+                            
                         </div>
                     </form>
                 </div>
