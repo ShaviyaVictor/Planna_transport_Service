@@ -20,12 +20,19 @@ Download the code and open the index.html file with a browser of your choice.
 1. JS 
 
 ## Design
-[Here is our design for the project](./design.pdf)
+[Here](./screenshots/design.pdf) is our design for the project.
 
 ## Screenshots
+ <p float="left">
+    <img src="./screenshots/screenshot.png" width="200">
+    <img src="./screenshots/screenshot2.png" width="200">
+    <img src="./screenshots/screenshot3.png" width="200">
+    <img src="./screenshots/screenshot4.png" width="200">
+    <img src="./screenshots/screenshot1.png" width="200">
 
+</p>
 
-# Licence
+## Licence
 Copyright (c) 2021 Moringa school
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files , to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
