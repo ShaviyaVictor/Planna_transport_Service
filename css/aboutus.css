@@ -1,0 +1,86 @@
+.Image{
+    background:rgba(0,0,0,0.5) url("../image/happy-black-couple-travelling-by-bus-chicago_108072-2050.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode:darken;
+    height: 550px;
+    padding-top: 50px;
+    color: black;
+}
+.heading{
+    text-align: center;
+    box-sizing: border-box;
+    padding-top: 20px;
+    
+    
+}
+.word{
+    color: blue;
+    font-size: 50px;
+}
+.about-text{
+    text-align: center;
+    font-size: 24px;
+    padding-bottom: 20px;
+    
+    
+}
+.text-below-img ul 
+{
+    display: flex;
+    list-style: none;
+    color: #FA9F3E;
+    justify-content: space-around;
+
+}
+.text-below-img ul li 
+{
+    margin: 15px;
+    padding: 15px;
+    list-style: none;
+    display: inline;
+    padding: 25px;
+    font-size: 17px;
+    position: relative;
+    z-index: 3;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.text-below-img ul li.active span{
+    padding-bottom: 8px;
+    border-bottom: 4px solid #286ded;
+    color: #286ded;
+    font-weight: 700;
+    
+}
+.text-below-img ul li:hover{
+    color: #286ded;
+}
+.text-below-img .description>div:not(:first-child){
+    display: none;
+}
+.description{
+    padding-top: -40px;
+    padding-left: 40px;
+    text-align: center;
+}
+.center{
+    background-color: seashell;
+    opacity: 0.7;
+    border-radius: 50px;
+    margin-left: 250px;
+    margin-top: 100px;
+    width: 900px;
+
+    
+}
+.word2{
+    color: black;
+    font-size: 50px;
+}
+
+}
+.description{
+    background-color: seashell;
+    border-radius: 10px;
+}

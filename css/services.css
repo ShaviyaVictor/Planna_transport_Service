@@ -1,0 +1,151 @@
+body {
+    overflow-x: hidden;
+}
+.main1{
+    background-color:#F3F6F9 ;
+}
+.submain {
+    background-color: #fff;
+    margin-left: 11%;
+    margin-right: 11%;
+}
+#pic1{
+    width: 750px;
+    border-bottom-left-radius: 178px;
+}
+.title{
+    display: flex;
+    justify-content: space-between;
+}
+#mainhead{
+    margin-left: 7%;
+    width: 500px;
+    font-size: 70px;
+    font-weight: 500;
+    margin-top: 200px;
+}
+.subhead > h2{
+    margin-left: 3% 3%;
+    font-size: 70px;
+    font-weight: 700;
+    margin-top: 70px;
+    text-align: center;
+}
+.subhead{
+    margin-bottom: 25px;
+}
+.summary{
+    display: flex;
+    background-color: rgba(0,0,255, 0.4)	;
+    justify-content: space-evenly;
+    border-radius: 50px;
+    width: 950px;
+    margin-left: 11%;
+    padding-bottom: 30px;
+}
+#time > h3{
+    margin-left: 3%;
+    font-size: 45px;
+    font-weight: 600;
+    margin-top: 57px;
+    text-decoration: underline;
+}
+#time > p{
+    margin-left: 3%;
+    margin-right: 5%;
+    margin-top: -5px;
+    width: 200px;
+    font-weight: 500;
+}
+#money > h3{
+    margin-left: 3%;
+    font-size: 45px;
+    font-weight: 600;
+    margin-top: 57px;
+    text-decoration: underline;
+}
+#money > p{
+    margin-left: 3%;
+    margin-right: 5%;
+    padding-top: 1px;
+    width: 200px;
+    font-weight: 500;
+}
+#convenience > h3{
+    margin-left: 3%;
+    font-size: 45px;
+    font-weight: 600;
+    margin-top: 57px;
+    text-decoration: underline;
+}
+#convenience > p{
+    margin-left: 3%;
+    margin-right: 5%;
+    padding-top: 1px;
+    width: 200px;
+    font-weight: 500;
+}
+.pics{
+    display: flex;
+    justify-content: space-evenly;
+    width: 900px;
+    margin-left: 10%;
+    margin-top: 5%;
+}
+.subhead > h3{
+    margin-left: 5%;
+    font-size: 45px;
+    font-weight: 600;
+    margin-top: 57px;
+}
+.subhead > p{
+    margin-left: 5%;
+    margin-right: 5%;
+    font-weight: 500;
+}
+.container1{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 10%;
+    margin-right: 20%;
+}
+.steps{
+    width: 300px;
+    
+}
+.container2{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 10%;
+    margin-right: 20%;
+}
+.vertical-center{
+    margin-left: 41%;
+    padding: 40px;
+    padding-bottom: 0px;
+}
+#click{
+    width: 150px;
+    height: 40px;
+    font-size: 20px;
+    color: #fff;
+    background-color: #FA9F3E;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+
+}
+#click:hover{
+    background-color: #0F2050;
+    transform:translateY(+10px);
+    transition: 0.2s ease-in-out;
+}
+.subhead > h2#conclusion{
+    text-align: left;
+    margin-left: 4.5%;
+    margin-bottom: 1%;
+}
+.subhead > h2#conclusion+p{
+    text-align: left;
+    margin-bottom: 3%;
+}
